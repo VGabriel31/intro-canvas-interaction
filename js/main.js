@@ -74,7 +74,7 @@ let circles = [];
 // Función para generar círculos aleatorios
 function generateRandomCircles(numCircles) {
     for (let i = 0; i < numCircles; i++) {
-        circles.push(new Circle(Math.random() * window_width, Math.random() * window_height, Math.random() * 50 + 20, "blue", (i + 1).toString(), Math.random() * 20 + 4));
+        circles.push(new Circle(Math.random() * window_width, Math.random() * window_height, Math.random() * 50 + 20, "blue", (i + 1).toString(), Math.random() * 10 + 2));
     }
 }
 
