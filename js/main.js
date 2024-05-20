@@ -8,7 +8,7 @@ const window_width = window.innerWidth;
 canvas.height = window_height;
 canvas.width = window_width;
 
-canvas.style.background = "purple";
+canvas.style.background = "	#d980f9";
 
 // Variable para almacenar las coordenadas del mouse
 let mouseX = 0;
@@ -74,7 +74,7 @@ let circles = [];
 // Función para generar círculos aleatorios
 function generateRandomCircles(numCircles) {
     for (let i = 0; i < numCircles; i++) {
-        circles.push(new Circle(Math.random() * window_width, Math.random() * window_height, Math.random() * 50 + 20, "red", (i + 1).toString(), Math.random() * 8 + 2));
+        circles.push(new Circle(Math.random() * window_width, Math.random() * window_height, Math.random() * 50 + 20, "red", (i + 1).toString(), Math.random() * 5 + 2));
     }
 }
 
@@ -95,7 +95,7 @@ function checkCollisions() {
             if (i !== j) {
                 if (getDistance(circles[i].posX, circles[i].posY, circles[j].posX, circles[j].posY) < (circles[i].radius + circles[j].radius)) {
                     circles[i].color = "blue";
-                    circles[j].color = "red";
+                    circles[j].color = "yellow";
 
                     // Calcular la nueva dirección para el primer círculo
                     const dx = circles[i].posX - circles[j].posX;
