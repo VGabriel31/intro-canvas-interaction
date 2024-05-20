@@ -8,7 +8,7 @@ const window_width = window.innerWidth;
 canvas.height = window_height;
 canvas.width = window_width;
 
-canvas.style.background = "#ff8";
+canvas.style.background = "purple";
 
 // Variable para almacenar las coordenadas del mouse
 let mouseX = 0;
@@ -74,7 +74,7 @@ let circles = [];
 // Función para generar círculos aleatorios
 function generateRandomCircles(numCircles) {
     for (let i = 0; i < numCircles; i++) {
-        circles.push(new Circle(Math.random() * window_width, Math.random() * window_height, Math.random() * 50 + 20, "blue", (i + 1).toString(), Math.random() * 10 + 2));
+        circles.push(new Circle(Math.random() * window_width, Math.random() * window_height, Math.random() * 50 + 20, "red", (i + 1).toString(), Math.random() * 8 + 2));
     }
 }
 
@@ -94,7 +94,7 @@ function checkCollisions() {
         for (let j = 0; j < circles.length; j++) {
             if (i !== j) {
                 if (getDistance(circles[i].posX, circles[i].posY, circles[j].posX, circles[j].posY) < (circles[i].radius + circles[j].radius)) {
-                    circles[i].color = "red";
+                    circles[i].color = "blue";
                     circles[j].color = "red";
 
                     // Calcular la nueva dirección para el primer círculo
@@ -135,7 +135,7 @@ canvas.addEventListener('mousedown', function(evt) {
 
 // Función para actualizar las coordenadas del mouse en el canvas
 function updateMouseCoordinates(context) {
-    context.font = "bold 15px cursive";
+    context.font = "bold 10px cursive";
     context.fillStyle = "black";
     context.fillText(" X: " + mouseX, 25, 10); // Actualiza el texto con la coordenada X
     context.fillText(" Y: " + mouseY, 25, 25); // Actualiza el texto con la coordenada Y
